@@ -9,5 +9,5 @@
 import Foundation
 
 public func testlog() {
-    NSLog("🍺")
+    NSLog("🍺001")
 }
