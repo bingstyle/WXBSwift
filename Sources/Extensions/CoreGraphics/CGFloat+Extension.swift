@@ -26,7 +26,6 @@ public extension CGFloat {
 public extension CGFloat {
     
     // ~= 20
-    @available (iOS 11.0, *)
     static func statusBar() -> CGFloat {
         let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
         return window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
