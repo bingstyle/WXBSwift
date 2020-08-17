@@ -13,7 +13,7 @@
 		2D93CC6C24EA59E300C9FA06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D93CC6A24EA59E300C9FA06 /* Main.storyboard */; };
 		2D93CC6E24EA59E500C9FA06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D93CC6D24EA59E500C9FA06 /* Assets.xcassets */; };
 		2D93CC7124EA59E500C9FA06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D93CC6F24EA59E500C9FA06 /* LaunchScreen.storyboard */; };
-		2D93CCA924EA5F8500C9FA06 /* WXBSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D93CCA824EA5F8500C9FA06 /* WXBSwift.framework */; };
+		2D93CCB824EA654400C9FA06 /* WXBSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D93CCB724EA654400C9FA06 /* WXBSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,7 +38,7 @@
 		2D93CC6D24EA59E500C9FA06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D93CC7024EA59E500C9FA06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D93CC7224EA59E500C9FA06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2D93CCA824EA5F8500C9FA06 /* WXBSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WXBSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D93CCB724EA654400C9FA06 /* WXBSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WXBSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D93CCA924EA5F8500C9FA06 /* WXBSwift.framework in Frameworks */,
+				2D93CCB824EA654400C9FA06 /* WXBSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +87,7 @@
 		2D93CCA724EA5F8500C9FA06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2D93CCA824EA5F8500C9FA06 /* WXBSwift.framework */,
+				2D93CCB724EA654400C9FA06 /* WXBSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

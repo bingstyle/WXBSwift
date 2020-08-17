@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "WXBSwift",
     platforms: [
-        .iOS(.v13),
+        .iOS(.v11),
         .tvOS(.v9),
         .watchOS(.v2),
         .macOS(.v10_10)
@@ -26,9 +26,7 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "WXBSwift",
-            dependencies: [],
-            path: "WXBSwift"
-        ),
+            dependencies: []),
         .testTarget(
             name: "WXBSwiftTests",
             dependencies: ["WXBSwift"]),

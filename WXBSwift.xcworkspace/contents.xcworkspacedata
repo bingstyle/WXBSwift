@@ -8,7 +8,7 @@
       location = "group:README.md">
    </FileRef>
    <FileRef
-      location = "group:WXBSwift/WXBSwift.xcodeproj">
+      location = "group:Sources/WXBSwift.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:WXBSwiftExample/WXBSwiftExample.xcodeproj">
