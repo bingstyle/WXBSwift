@@ -11,9 +11,10 @@
 import UIKit
 
 // MARK: Gesture Extensions
+
+///Make sure you use  "[weak self] (gesture) in" if you are using the keyword self inside the closure or there might be a memory leak
 public extension UIView {
-    /// http://stackoverflow.com/questions/4660371/how-to-add-a-touch-event-to-a-uiview/32182866#32182866
-    /// EZSwiftExtensions
+    
     func addTapGesture(tapNumber: Int = 1, target: AnyObject, action: Selector) {
         let tap = UITapGestureRecognizer(target: target, action: action)
         tap.numberOfTapsRequired = tapNumber
@@ -21,43 +22,35 @@ public extension UIView {
         isUserInteractionEnabled = true
     }
     
-    /// EZSwiftExtensions - Make sure you use  "[weak self] (gesture) in" if you are using the keyword self inside the closure or there might be a memory leak
     func addTapGesture(tapNumber: Int = 1, action: ((UITapGestureRecognizer) -> Void)?) {
         let tap = BlockTap(tapCount: tapNumber, fingerCount: 1, action: action)
         addGestureRecognizer(tap)
         isUserInteractionEnabled = true
     }
     
-    /// EZSwiftExtensions
     func addSwipeGesture(direction: UISwipeGestureRecognizer.Direction, numberOfTouches: Int = 1, target: AnyObject, action: Selector) {
         let swipe = UISwipeGestureRecognizer(target: target, action: action)
         swipe.direction = direction
         
         #if os(iOS)
-            
             swipe.numberOfTouchesRequired = numberOfTouches
-            
         #endif
         
         addGestureRecognizer(swipe)
         isUserInteractionEnabled = true
     }
-    
-    /// EZSwiftExtensions - Make sure you use  "[weak self] (gesture) in" if you are using the keyword self inside the closure or there might be a memory leak
     func addSwipeGesture(direction: UISwipeGestureRecognizer.Direction, numberOfTouches: Int = 1, action: ((UISwipeGestureRecognizer) -> Void)?) {
         let swipe = BlockSwipe(direction: direction, fingerCount: numberOfTouches, action: action)
         addGestureRecognizer(swipe)
         isUserInteractionEnabled = true
     }
     
-    /// EZSwiftExtensions
     func addPanGesture(target: AnyObject, action: Selector) {
         let pan = UIPanGestureRecognizer(target: target, action: action)
         addGestureRecognizer(pan)
         isUserInteractionEnabled = true
     }
-    
-    /// EZSwiftExtensions - Make sure you use  "[weak self] (gesture) in" if you are using the keyword self inside the closure or there might be a memory leak
+
     func addPanGesture(action: ((UIPanGestureRecognizer) -> Void)?) {
         let pan = BlockPan(action: action)
         addGestureRecognizer(pan)
@@ -65,8 +58,6 @@ public extension UIView {
     }
     
     #if os(iOS)
-    
-    /// EZSwiftExtensions
     func addPinchGesture(target: AnyObject, action: Selector) {
         let pinch = UIPinchGestureRecognizer(target: target, action: action)
         addGestureRecognizer(pinch)
@@ -76,8 +67,6 @@ public extension UIView {
     #endif
     
     #if os(iOS)
-    
-    /// EZSwiftExtensions - Make sure you use  "[weak self] (gesture) in" if you are using the keyword self inside the closure or there might be a memory leak
     func addPinchGesture(action: ((UIPinchGestureRecognizer) -> Void)?) {
         let pinch = BlockPinch(action: action)
         addGestureRecognizer(pinch)
@@ -86,14 +75,11 @@ public extension UIView {
     
     #endif
     
-    /// EZSwiftExtensions
     func addLongPressGesture(target: AnyObject, action: Selector) {
         let longPress = UILongPressGestureRecognizer(target: target, action: action)
         addGestureRecognizer(longPress)
         isUserInteractionEnabled = true
     }
-    
-    /// EZSwiftExtensions - Make sure you use  "[weak self] (gesture) in" if you are using the keyword self inside the closure or there might be a memory leak
     func addLongPressGesture(action: ((UILongPressGestureRecognizer) -> Void)?) {
         let longPress = BlockLongPress(action: action)
         addGestureRecognizer(longPress)
@@ -101,8 +87,6 @@ public extension UIView {
     }
 }
 
-
-///Make sure you use  "[weak self] (gesture) in" if you are using the keyword self inside the closure or there might be a memory leak
 private class BlockTap: UITapGestureRecognizer {
     private var tapAction: ((UITapGestureRecognizer) -> Void)?
     

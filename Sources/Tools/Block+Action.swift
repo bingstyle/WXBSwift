@@ -9,28 +9,7 @@
 #if canImport(UIKit)
 import UIKit
 
-private class Actor<T> {
-    @objc func act(sender: AnyObject) { closure(sender as! T) }
-    fileprivate let closure: (T) -> Void
-    init(acts closure: @escaping (T) -> Void) {
-        self.closure = closure
-    }
-}
-
-private class GreenRoom {
-    fileprivate var actors: [Any] = []
-}
-private var GreenRoomKey: UInt32 = 893
-
-private func register<T>(_ actor: Actor<T>, to object: AnyObject) {
-    let room = objc_getAssociatedObject(object, &GreenRoomKey) as? GreenRoom ?? {
-        let room = GreenRoom()
-        objc_setAssociatedObject(object, &GreenRoomKey, room, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        return room
-        }()
-    room.actors.append(actor)
-}
-
+///Make sure you use  "[weak self] (gesture) in" if you are using the keyword self inside the closure or there might be a memory leak
 public protocol ActionClosurable {}
 
 public extension ActionClosurable where Self: AnyObject {
@@ -110,6 +89,29 @@ public extension ActionClosurable where Self: UIBarButtonItem {
             self.action = $1
         })
     }
+}
+
+// MARK: - Private
+private class Actor<T> {
+    @objc func act(sender: AnyObject) { closure(sender as! T) }
+    fileprivate let closure: (T) -> Void
+    init(acts closure: @escaping (T) -> Void) {
+        self.closure = closure
+    }
+}
+
+private class GreenRoom {
+    fileprivate var actors: [Any] = []
+}
+private var GreenRoomKey: UInt32 = 893
+
+private func register<T>(_ actor: Actor<T>, to object: AnyObject) {
+    let room = objc_getAssociatedObject(object, &GreenRoomKey) as? GreenRoom ?? {
+        let room = GreenRoom()
+        objc_setAssociatedObject(object, &GreenRoomKey, room, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        return room
+        }()
+    room.actors.append(actor)
 }
 
 #endif
