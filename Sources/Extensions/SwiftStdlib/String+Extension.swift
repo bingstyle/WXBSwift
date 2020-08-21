@@ -289,11 +289,7 @@ public extension String {
     var isNumeric: Bool {
         let scanner = Scanner(string: self)
         scanner.locale = NSLocale.current
-        #if os(Linux) || targetEnvironment(macCatalyst)
         return scanner.scanDecimal() != nil && scanner.isAtEnd
-        #else
-        return scanner.scanDecimal(nil) && scanner.isAtEnd
-        #endif
     }
     #endif
 
@@ -1197,12 +1193,12 @@ public extension String {
     }
     #endif
 
-    #if canImport(AppKit) || canImport(UIKit)
+    #if canImport(UIKit)
     /// SwifterSwift: Add color to string.
     ///
     /// - Parameter color: text color.
     /// - Returns: a NSAttributedString versions of string colored with given color.
-    func colored(with color: Color) -> NSAttributedString {
+    func colored(with color: UIColor) -> NSAttributedString {
         return NSMutableAttributedString(string: self, attributes: [.foregroundColor: color])
     }
     #endif

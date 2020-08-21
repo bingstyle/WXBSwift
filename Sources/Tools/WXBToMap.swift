@@ -21,7 +21,7 @@ public struct WXBToMap {
         
         let latitude = location.coordinate.latitude
         let longitude = location.coordinate.longitude
-        let appName = UIApplication.shared.appBundleName
+        let appName = Bundle.main.object(forInfoDictionaryKey: kCFBundleNameKey as String)!
         
         var maps = [MapModel]()
         maps.append(MapModel.init(title: "苹果地图", url: nil))

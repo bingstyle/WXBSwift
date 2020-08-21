@@ -39,7 +39,7 @@ public struct WXBSaveFiles {
                 NSLog("\(urlStr)")
             }
         }
-        url?.appendPathComponent("\(path.urlEncoded)")
+        url?.appendPathComponent("\(path.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!)")
         do {
             try data.write(to: url!)
             NSLog("\(path)已保存到本地")
@@ -50,7 +50,7 @@ public struct WXBSaveFiles {
     //读取data数据
     static func read(path: String) -> Data? {
         var url = WXBSaveFiles.cacheURL()
-        url?.appendPathComponent("\(path.urlEncoded)")
+        url?.appendPathComponent("\(path.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!)")
         
         if let dataRead = try? Data(contentsOf: url!) {
             return dataRead

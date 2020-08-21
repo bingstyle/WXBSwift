@@ -19,7 +19,7 @@ public extension UILabel {
         paragraphStyle.lineSpacing = lineSpace
         paragraphStyle.alignment = .justified
         paragraphStyle.lineBreakMode = .byTruncatingTail
-        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, text.charactersArray.count))
+        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, text.count))
         self.attributedText = attributedString
         self.sizeToFit()
     }
