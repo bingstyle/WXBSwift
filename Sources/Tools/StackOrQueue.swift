@@ -9,10 +9,13 @@
 #if canImport(Foundation)
 import Foundation
 
+// MARK: - Stack
 public struct Stack<Element> {
-    
+    public init() {}
     private var stack = [Element]()
-    
+}
+
+public extension Stack {
     //是否为空
     var isEmpty: Bool { return stack.isEmpty }
     //栈的大小
@@ -30,15 +33,16 @@ public struct Stack<Element> {
     mutating func pop() -> Element? {
         return stack.popLast()
     }
-    
 }
 
-
+// MARK: - Queue
 public struct Queue<Element> {
-    
+    public init() {}
     private var left = [Element]()
     private var right = [Element]()
-    
+}
+
+public extension Queue {
     //是否为空
     var isEmpty: Bool { return left.isEmpty && right.isEmpty }
     //队列的大小
@@ -62,7 +66,7 @@ public struct Queue<Element> {
         }
         return left.popLast()
     }
-    
 }
+
 
 #endif

@@ -8,12 +8,15 @@
 
 import UIKit
 
+
 public class WXBPhoto: NSObject {
-    
-    static let manager = WXBPhoto()
-    typealias MGUploadPhotoDidFinishBlock = (([UIImage]) -> Void)
+    public static let manager = WXBPhoto()
+    public typealias MGUploadPhotoDidFinishBlock = (([UIImage]) -> Void)
     private var didFinishBlock: MGUploadPhotoDidFinishBlock?
-    
+}
+
+// MARK: - Public
+public extension WXBPhoto {
     //选择列表
     func showActionSheet(block: @escaping MGUploadPhotoDidFinishBlock) {
         didFinishBlock = block

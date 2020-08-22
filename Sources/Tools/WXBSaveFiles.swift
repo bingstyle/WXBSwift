@@ -9,6 +9,24 @@
 import Foundation
 
 public struct WXBSaveFiles {
+    
+    private static func cacheURL() -> URL? {
+        let manager = FileManager.default
+        var url = manager.urls(for: .documentDirectory, in: .userDomainMask).first
+        url?.appendPathComponent("cache/")
+        return url
+    }
+    
+    //清理用户缓存数据
+    static func clearUserCache() {
+        let url = WXBSaveFiles.cacheURL()
+        do {
+            try? FileManager.default.removeItem(at: url!)
+        }
+    }
+}
+
+public extension WXBSaveFiles {
     //缓存模型数据
     static func save<T: Codable>(model: T) {
         do {
@@ -58,20 +76,5 @@ public struct WXBSaveFiles {
             NSLog("\(path)不存在，读取本地文件失败")
         }
         return nil
-    }
-    
-    private static func cacheURL() -> URL? {
-        let manager = FileManager.default
-        var url = manager.urls(for: .documentDirectory, in: .userDomainMask).first
-        url?.appendPathComponent("cache/")
-        return url
-    }
-    
-    //清理用户缓存数据
-    static func clearUserCache() {
-        let url = WXBSaveFiles.cacheURL()
-        do {
-            try? FileManager.default.removeItem(at: url!)
-        }
     }
 }

@@ -9,14 +9,16 @@
 import UIKit
 import CoreLocation
 
+// MARK: - Properties
 public class WXBLocation: NSObject {
     
-    static let shared = WXBLocation()
+    public static let shared = WXBLocation()
     private static let manager = CLLocationManager()
     private var locationBlock: ((CLLocation) -> Void)?
-    
-    // MARK: - Public
-    
+}
+
+// MARK: - Public
+public extension WXBLocation {
     /// 单次定位
     func requestLocation(_ block: ((CLLocation) -> Void)?) {
         locationBlock = block
@@ -51,10 +53,9 @@ public class WXBLocation: NSObject {
     func stopLocation() {
         WXBLocation.manager.stopUpdatingLocation()
     }
-
-    // MARK: - Private
     
-    private func authAlertVC() -> UIAlertController? {
+    /// 定位权限弹窗
+    func authAlertVC() -> UIAlertController? {
         // 查看手机定位服务是否开启
         if CLLocationManager.locationServicesEnabled() {
             let status = CLLocationManager.authorizationStatus()

@@ -12,13 +12,19 @@ import UIKit
 public struct WXBNavigationBar {
     
     /// APP 启动时调用, 在 didFinishLaunchingWithOptions 方法中
-    static let registerRuntime: Void = { //使用静态属性以保证只调用一次(该属性是个方法)
+    public static let registerRuntime: Void = { //使用静态属性以保证只调用一次(该属性是个方法)
         UINavigationController.navLoad
         UIViewController.vcLoad
     }()
 }
 
 public extension UIViewController {
+    
+    private var testesfw: CGFloat {
+        return 1
+    }
+    
+    /// 导航栏透明度，默认 1
     var wxb_navBarBackgroundAlpha: CGFloat {
         get {
             let alpha = objc_getAssociatedObject(self, &AssociatedKeys.wxb_navBarBackgroundAlpha) as? CGFloat
@@ -30,6 +36,7 @@ public extension UIViewController {
         }
     }
     
+    ///  是否禁止返回手势，默认 false
     var wxb_interactivePopDisabled: Bool {
         get {
             return objc_getAssociatedObject(self, &AssociatedKeys.wxb_interactivePopDisabled) as? Bool ?? false
@@ -39,6 +46,7 @@ public extension UIViewController {
         }
     }
     
+    ///  是否隐藏导航栏，默认 false
     var wxb_prefersNavigationBarHidden: Bool {
         get {
             return objc_getAssociatedObject(self, &AssociatedKeys.wxb_prefersNavigationBarHidden) as? Bool ?? false

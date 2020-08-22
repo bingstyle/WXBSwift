@@ -17,6 +17,21 @@ public struct WXBToMap {
         var url: URL?
     }
     
+    private static func toAppleMap(_ to: CLLocation, title: String) {
+        let current = MKMapItem.forCurrentLocation()
+        let toLocation = MKMapItem.init(placemark: MKPlacemark.init(coordinate: to.coordinate))
+        toLocation.name = title
+        let options = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving,
+                   MKLaunchOptionsMapTypeKey: 0,
+                   MKLaunchOptionsShowsTrafficKey: true
+            ] as [String : Any]
+        
+        MKMapItem.openMaps(with: [current, toLocation], launchOptions: options)
+    }
+}
+
+// MARK: - Public
+public extension WXBToMap {
     static func toMap(location: CLLocation, title: String) {
         
         let latitude = location.coordinate.latitude
@@ -66,17 +81,5 @@ public struct WXBToMap {
         
         let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
         keyWindow?.rootViewController?.present(alertVC, animated: true, completion: nil)
-    }
-    
-    private static func toAppleMap(_ to: CLLocation, title: String) {
-        let current = MKMapItem.forCurrentLocation()
-        let toLocation = MKMapItem.init(placemark: MKPlacemark.init(coordinate: to.coordinate))
-        toLocation.name = title
-        let options = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving,
-                   MKLaunchOptionsMapTypeKey: 0,
-                   MKLaunchOptionsShowsTrafficKey: true
-            ] as [String : Any]
-        
-        MKMapItem.openMaps(with: [current, toLocation], launchOptions: options)
     }
 }

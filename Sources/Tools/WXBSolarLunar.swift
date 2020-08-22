@@ -22,11 +22,11 @@ fileprivate func SolarToInt(_ y: Int, _ m: Int, _ d: Int) -> Int {
 // MARK: - Solar
 public struct Solar {
     
-    var year: Int
-    var month: Int
-    var day: Int
+    public var year: Int
+    public var month: Int
+    public var day: Int
     
-    init(y: Int, m: Int, d: Int) {
+    public init(y: Int, m: Int, d: Int) {
         year = y
         month = m
         day = d
@@ -35,12 +35,12 @@ public struct Solar {
 
 public struct Lunar {
     
-    var year: Int
-    var month: Int
-    var day: Int
-    var isleap: Bool
+    public var year: Int
+    public var month: Int
+    public var day: Int
+    public var isleap: Bool
     
-    init(y: Int, m: Int, d: Int, leap: Bool) {
+    public init(y: Int, m: Int, d: Int, leap: Bool) {
         year = y
         month = m
         day = d
@@ -66,7 +66,9 @@ public struct WXBSolarLunar {
         let solar = Solar.init(y: y, m: mm, d: dd)
         return solar
     }
-    
+}
+
+public extension WXBSolarLunar {
     ///农历转公历
     static func solarFromLunar(_ lunar: Lunar) -> Solar {
         let days = lunar_month_days[lunar.year - lunar_month_days[0]]
@@ -261,7 +263,6 @@ public struct WXBSolarLunar {
         return constellation
     }
 }
-
 
 fileprivate let lunar_month_days =
 [

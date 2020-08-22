@@ -9,6 +9,11 @@
 import UIKit
 
 public class WXBUtils: NSObject {
+    
+}
+
+// MARK: - Public
+public extension WXBUtils {
     ///获取所有属性名称
     static func getAllPropertys(_ clsName: Swift.AnyClass) -> [String] {
         var count: UInt32 = 0
