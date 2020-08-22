@@ -27,9 +27,7 @@ public extension UITabBarController {
         
         let nav: UINavigationController = UINavigationController.init(rootViewController: vc)
         nav.tabBarItem = UITabBarItem.init(title: title, image: image.withRenderingMode(.alwaysOriginal), selectedImage: selectedImage.withRenderingMode(.alwaysOriginal))
-        nav.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont.boldSystemFont(ofSize: 20)]
         vc.navigationItem.title = title
-        nav.navigationBar.tintColor = .white
         return nav
     }
 }
