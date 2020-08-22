@@ -1,8 +1,7 @@
 # WXBSwift
 A set of useful extensions and tools for Swift
 
-![](https://img.shields.io/badge/language-swift-orange.svg)
-[![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)](https://swift.org)
+[![Swift](https://img.shields.io/badge/language-Swift%205.0-orange.svg)](https://swift.org)
 [![Platform](https://img.shields.io/badge/platforms-iOS%2013.0-blue.svg)](https://developer.apple.com/xcode)
 [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/WXBSwift.svg)](https://cocoapods.org/pods/WXBSwift)
 [![SPM compatible](https://img.shields.io/badge/SPM-Compatible-brightgreen.svg?style=flat)](https://swift.org/package-manager/)
