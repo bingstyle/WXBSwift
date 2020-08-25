@@ -289,7 +289,12 @@ public extension String {
     var isNumeric: Bool {
         let scanner = Scanner(string: self)
         scanner.locale = NSLocale.current
-        return scanner.scanDecimal() != nil && scanner.isAtEnd
+        if #available(iOS 13.0, *) {
+            return scanner.scanDecimal() != nil && scanner.isAtEnd
+        } else {
+            // Fallback on earlier versions
+            return scanner.scanDecimal(nil) && scanner.isAtEnd
+        }
     }
     #endif
 

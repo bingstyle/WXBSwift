@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "WXBSwift"
-  spec.version      = "1.0.2"
+  spec.version      = "1.0.3"
   spec.swift_version = '5.0'
   spec.summary      = "A set of useful extensions and tools for Swift"
 
@@ -21,7 +21,7 @@ Pod::Spec.new do |spec|
   spec.social_media_url = 'http://weixinbing.top/'
   
   spec.source       = { :git => "https://github.com/bingstyle/WXBSwift.git", :tag => "#{spec.version}" }
-  spec.ios.deployment_target = '13.0'
+  spec.ios.deployment_target = '11.0'
 
   #spec.source_files  = "Classes", "Classes/**/*.{h,m}"
 

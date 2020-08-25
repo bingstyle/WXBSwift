@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "WXBSwift",
     platforms: [
-        .iOS(.v13),
+        .iOS(.v11),
         .tvOS(.v9),
         .watchOS(.v2),
         .macOS(.v10_10)

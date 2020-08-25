@@ -2,7 +2,7 @@
 A set of useful extensions and tools for Swift
 
 [![Swift](https://img.shields.io/badge/language-Swift%205.0-orange.svg)](https://swift.org)
-[![Platform](https://img.shields.io/badge/platforms-iOS%2013.0-blue.svg)](https://developer.apple.com/xcode)
+[![Platform](https://img.shields.io/badge/platform-iOS%2011.0-blue.svg)](https://developer.apple.com/xcode)
 [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/WXBSwift.svg)](https://cocoapods.org/pods/WXBSwift)
 [![SPM compatible](https://img.shields.io/badge/SPM-Compatible-brightgreen.svg?style=flat)](https://swift.org/package-manager/)
 ![license](https://img.shields.io/github/license/mashape/apistatus.svg)
