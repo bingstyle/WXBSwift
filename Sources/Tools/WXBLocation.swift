@@ -21,8 +21,8 @@ public class WXBLocation: NSObject {
 public extension WXBLocation {
     /// 单次定位
     func requestLocation(_ block: ((CLLocation) -> Void)?) {
-        locationBlock = block
         startLocation(delegate: self)
+        locationBlock = block
     }
     
     /// 持续定位

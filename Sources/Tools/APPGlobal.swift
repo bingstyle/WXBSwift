@@ -12,7 +12,7 @@ import UIKit
 public func DLog<T>(_ message : T, file : String = #file, funcName : String = #function, lineNum : Int = #line) {
     #if DEBUG
     let fileName = (file as NSString).lastPathComponent
-    NSLog("\(fileName):(\(lineNum))-\(message)")
+    print("\(fileName):(\(lineNum))-\(message)")
     #endif
 }
 

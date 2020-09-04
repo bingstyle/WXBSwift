@@ -103,8 +103,16 @@ public extension UIView {
             return layer.cornerRadius
         }
         set {
-            layer.masksToBounds = true
             layer.cornerRadius = abs(CGFloat(Int(newValue * 100)) / 100)
+        }
+    }
+    
+    @IBInspectable var layerMasksToBounds: Bool {
+        get {
+            return layer.masksToBounds
+        }
+        set {
+            layer.masksToBounds = newValue
         }
     }
     
