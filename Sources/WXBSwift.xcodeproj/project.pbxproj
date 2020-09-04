@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D2FCF0624EFAF3000BD14AC /* WXBNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2FCF0524EFAF3000BD14AC /* WXBNavigationBar.swift */; };
 		2D424B5C2500C60E00D04B95 /* WXBDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D424B5B2500C60E00D04B95 /* WXBDevice.swift */; };
+		2D424B5E25021E9000D04B95 /* WXBBattery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D424B5D25021E9000D04B95 /* WXBBattery.swift */; };
 		2D93CCA124EA5DA200C9FA06 /* WXBSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D93CC9F24EA5DA200C9FA06 /* WXBSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2D93CCB124EA614800C9FA06 /* testlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93CCB024EA614800C9FA06 /* testlog.swift */; };
 		2D93CCC924EA6B6200C9FA06 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93CCC824EA6B6200C9FA06 /* CGFloat+Extension.swift */; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		2D2FCF0524EFAF3000BD14AC /* WXBNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXBNavigationBar.swift; sourceTree = "<group>"; };
 		2D424B5B2500C60E00D04B95 /* WXBDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXBDevice.swift; sourceTree = "<group>"; };
+		2D424B5D25021E9000D04B95 /* WXBBattery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXBBattery.swift; sourceTree = "<group>"; };
 		2D93CC9C24EA5DA200C9FA06 /* WXBSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WXBSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D93CC9F24EA5DA200C9FA06 /* WXBSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXBSwift.h; sourceTree = "<group>"; };
 		2D93CCA024EA5DA200C9FA06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				2D93CD3724EA870400C9FA06 /* WXBToMap.swift */,
 				2D93CD3B24EA879B00C9FA06 /* WXBUtils.swift */,
 				2D424B5B2500C60E00D04B95 /* WXBDevice.swift */,
+				2D424B5D25021E9000D04B95 /* WXBBattery.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				2D93CD1724EA7A3000C9FA06 /* UIViewController+Extension.swift in Sources */,
 				2D93CD0324EA788600C9FA06 /* UIFont+Extension.swift in Sources */,
 				2D93CCE424EA70C300C9FA06 /* String+Extension.swift in Sources */,
+				2D424B5E25021E9000D04B95 /* WXBBattery.swift in Sources */,
 				2D93CD0724EA78FB00C9FA06 /* UIImageView+Extension.swift in Sources */,
 				2D93CD0924EA791C00C9FA06 /* UILabel+Extension.swift in Sources */,
 				2D93CCEA24EA737E00C9FA06 /* Collection+Extension.swift in Sources */,

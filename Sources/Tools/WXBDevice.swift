@@ -354,6 +354,7 @@ public extension WXBDevice {
         }
     }
     
+    /// 电池容量，单位mA
     var cpuName: String {
         switch self {
         case .iPodTouch5: return "Apple A5"
@@ -424,6 +425,153 @@ public extension WXBDevice {
         case .appleTV4K: return ""
         case .simulator(let model): return model.cpuName
         case .unknown: return ""
+        }
+    }
+    
+    var batteryCapacity: Int {
+        switch self {
+        case .iPodTouch5: return 1030
+        case .iPodTouch6: return 1043
+        case .iPodTouch7: return 1043
+            
+        case .iPhone4: return 1420
+        case .iPhone4s: return 1440
+        case .iPhone5: return 1440
+        case .iPhone5c: return 1507
+        case .iPhone5s: return 1570
+        case .iPhone6: return 1810
+        case .iPhone6Plus: return 2915
+        case .iPhone6s: return 1715
+        case .iPhone6sPlus: return 2915
+        case .iPhone7: return 1960
+        case .iPhone7Plus: return 2900
+        case .iPhoneSE: return 1624
+        case .iPhone8: return 1821
+        case .iPhone8Plus: return 2675
+        case .iPhoneX: return 2150
+        case .iPhoneXS: return 2658
+        case .iPhoneXSMax: return 3174
+        case .iPhoneXR: return 2942
+        case .iPhone11: return 3110
+        case .iPhone11Pro: return 3190
+        case .iPhone11ProMax: return 3500
+        case .iPhoneSE2: return 1821
+          
+        case .iPad2: return 6930
+        case .iPad3: return 11560
+        case .iPad4: return 11560
+        case .iPadAir: return 8827
+        case .iPadAir2: return 7340
+        case .iPad5: return 8820
+        case .iPad6: return 8820
+        case .iPadAir3: return 8820
+        case .iPad7: return 8820
+        case .iPadMini: return 4440
+        case .iPadMini2: return 6471
+        case .iPadMini3: return 6471
+        case .iPadMini4: return 5124
+        case .iPadMini5: return 5124
+        case .iPadPro9Inch: return 7306
+        case .iPadPro12Inch: return 10307
+        case .iPadPro12Inch2: return 10307
+        case .iPadPro10Inch: return 10307
+        case .iPadPro11Inch: return 10307
+        case .iPadPro12Inch3: return 10307
+        case .iPadPro11Inch2: return 10307
+        case .iPadPro12Inch4: return 10307
+          
+        case .appleWatchSeries0_38mm: return 0
+        case .appleWatchSeries0_42mm: return 0
+        case .appleWatchSeries1_38mm: return 0
+        case .appleWatchSeries1_42mm: return 0
+        case .appleWatchSeries2_38mm: return 0
+        case .appleWatchSeries2_42mm: return 0
+        case .appleWatchSeries3_38mm: return 0
+        case .appleWatchSeries3_42mm: return 0
+        case .appleWatchSeries4_40mm: return 0
+        case .appleWatchSeries4_44mm: return 0
+        case .appleWatchSeries5_40mm: return 0
+        case .appleWatchSeries5_44mm: return 0
+          
+        case .homePod: return 0
+        case .appleTVHD: return 0
+        case .appleTV4K: return 0
+        case .simulator(let model): return model.batteryCapacity
+        case .unknown: return 0
+        }
+    }
+    
+    /// 电池电压：单位V
+    var batteryVoltage: Float {
+        switch self {
+        case .iPodTouch5: return 3.7
+        case .iPodTouch6: return 3.7
+        case .iPodTouch7: return 3.7
+            
+        case .iPhone4: return 3.7
+        case .iPhone4s: return 3.7
+        case .iPhone5: return 3.8
+        case .iPhone5c: return 3.8
+        case .iPhone5s: return 3.8
+        case .iPhone6: return 3.82
+        case .iPhone6Plus: return 3.82
+        case .iPhone6s: return 3.82
+        case .iPhone6sPlus: return 3.82
+        case .iPhone7: return 3.82
+        case .iPhone7Plus: return 3.82
+        case .iPhoneSE: return 3.82
+        case .iPhone8: return 3.82
+        case .iPhone8Plus: return 3.82
+        case .iPhoneX: return 3.81
+        case .iPhoneXS: return 3.80
+        case .iPhoneXSMax: return 3.80
+        case .iPhoneXR: return 3.80
+        case .iPhone11: return 3.80
+        case .iPhone11Pro: return 3.80
+        case .iPhone11ProMax: return 3.80
+        case .iPhoneSE2: return 3.80
+          
+        case .iPad2: return 3.8
+        case .iPad3: return 3.7
+        case .iPad4: return 3.7
+        case .iPadAir: return 3.73
+        case .iPadAir2: return 3.76
+        case .iPad5: return 3.73
+        case .iPad6: return 3.73
+        case .iPadAir3: return 3.73
+        case .iPad7: return 3.73
+        case .iPadMini: return 3.75
+        case .iPadMini2: return 3.75
+        case .iPadMini3: return 3.75
+        case .iPadMini4: return 3.82
+        case .iPadMini5: return 3.82
+        case .iPadPro9Inch: return 3.82
+        case .iPadPro12Inch: return 3.77
+        case .iPadPro12Inch2: return 3.77
+        case .iPadPro10Inch: return 3.77
+        case .iPadPro11Inch: return 3.77
+        case .iPadPro12Inch3: return 3.77
+        case .iPadPro11Inch2: return 3.77
+        case .iPadPro12Inch4: return 3.77
+          
+        case .appleWatchSeries0_38mm: return 0
+        case .appleWatchSeries0_42mm: return 0
+        case .appleWatchSeries1_38mm: return 0
+        case .appleWatchSeries1_42mm: return 0
+        case .appleWatchSeries2_38mm: return 0
+        case .appleWatchSeries2_42mm: return 0
+        case .appleWatchSeries3_38mm: return 0
+        case .appleWatchSeries3_42mm: return 0
+        case .appleWatchSeries4_40mm: return 0
+        case .appleWatchSeries4_44mm: return 0
+        case .appleWatchSeries5_40mm: return 0
+        case .appleWatchSeries5_44mm: return 0
+          
+        case .homePod: return 0
+        case .appleTVHD: return 0
+        case .appleTV4K: return 0
+        case .simulator(let model): return model.batteryVoltage
+        case .unknown: return 0
         }
     }
 }

@@ -78,6 +78,14 @@ public extension UIDevice {
         return totalDiskSpaceBytes - freeDiskSpaceBytes
     }
     
+    /// 获取CPU数量
+    var cpuNumber: Int {
+        var result: Int = 0
+        var size = MemoryLayout<Int64>.size
+        sysctlbyname("hw.ncpu", &result, &size, nil, 0)
+        return result
+    }
+    
     /// CPU 架构名称
     var cpuArchName: String? {
         if let name = NXGetLocalArchInfo().pointee.name {
