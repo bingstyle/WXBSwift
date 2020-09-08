@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "WXBSwift"
-  spec.version      = "1.0.6"
+  spec.version      = "1.0.7"
   spec.swift_version = '5.0'
   spec.summary      = "A set of useful extensions and tools for Swift"
 

@@ -10,15 +10,15 @@ import Foundation
 
 public struct WXBSaveFiles {
     
-    static func cacheURL() -> URL? {
+    public static func cacheURL() -> URL? {
         let manager = FileManager.default
         var url = manager.urls(for: .documentDirectory, in: .userDomainMask).first
-        url?.appendPathComponent("cache/")
+        url?.appendPathComponent("WXBSaveFiles/")
         return url
     }
     
     //清理用户缓存数据
-    static func clearUserCache() {
+    public static func clearUserCache() {
         let url = WXBSaveFiles.cacheURL()
         do {
             try? FileManager.default.removeItem(at: url!)
