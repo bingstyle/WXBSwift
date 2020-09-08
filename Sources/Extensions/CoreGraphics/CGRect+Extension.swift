@@ -6,8 +6,8 @@
 //  Copyright © 2020 bing. All rights reserved.
 //
 
-#if canImport(CoreGraphics)
-import CoreGraphics
+#if canImport(UIKit)
+import UIKit
 
 // MARK: - Properties
 public extension CGRect {
@@ -33,7 +33,9 @@ public extension CGRect {
 
 // MARK: - Methods
 public extension CGRect {
-
+    func inset(_ value: CGFloat) -> CGRect {
+        return self.inset(by: UIEdgeInsets.init(top: value, left: value, bottom: value, right: value))
+    }
     /// SwifterSwift: Create a new `CGRect` by resizing with specified anchor
     /// - Parameters:
     ///   - size: new size to be applied

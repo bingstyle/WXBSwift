@@ -10,7 +10,7 @@ import Foundation
 
 public struct WXBSaveFiles {
     
-    private static func cacheURL() -> URL? {
+    static func cacheURL() -> URL? {
         let manager = FileManager.default
         var url = manager.urls(for: .documentDirectory, in: .userDomainMask).first
         url?.appendPathComponent("cache/")

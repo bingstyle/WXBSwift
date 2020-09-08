@@ -72,7 +72,15 @@ public extension UITextField {
                            options: String.CompareOptions.regularExpression,
                            range: nil, locale: nil) != nil
     }
-
+    
+    @IBInspectable var paddingLeft: CGFloat {
+        get {
+            return leftView?.bounds.size.width ?? 0
+        }
+        set {
+            addPaddingLeft(newValue)
+        }
+    }
     /// SwifterSwift: Left view tint color.
     @IBInspectable var leftViewTintColor: UIColor? {
         get {
