@@ -13,6 +13,7 @@ import CoreLocation
 public class WXBLocation: NSObject {
     
     public static let shared = WXBLocation()
+    
     private static let manager = CLLocationManager()
     private var locationBlock: ((CLLocation) -> Void)?
 }
@@ -40,13 +41,6 @@ public extension WXBLocation {
         }
         // 开始定位
         manager.startUpdatingLocation()
-
-        // 判断是否开启定位权限, 否就弹窗提示
-        let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
-        if let vc = authAlertVC(),
-            let rootVC = keyWindow?.rootViewController {
-            rootVC.present(vc, animated: true, completion: nil)
-        }
     }
     
     /// 停止持续定位
@@ -55,6 +49,14 @@ public extension WXBLocation {
     }
     
     /// 定位权限弹窗
+    func showAuthAlert() {
+        // 判断是否开启定位权限, 否就弹窗提示
+        let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+        if let vc = authAlertVC(),
+            let rootVC = keyWindow?.rootViewController {
+            rootVC.present(vc, animated: true, completion: nil)
+        }
+    }
     func authAlertVC() -> UIAlertController? {
         // 查看手机定位服务是否开启
         if CLLocationManager.locationServicesEnabled() {
