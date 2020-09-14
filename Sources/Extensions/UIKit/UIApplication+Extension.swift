@@ -25,4 +25,18 @@ public extension UIApplication {
     var appBuildVersion: String {
         return Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as! String
     }
+    
+    //是否显示新版本引导页
+    static func canShowNewGuidePages() -> Bool {
+        //系统直接读取的版本号
+        let newVersion = Bundle.main.object(forInfoDictionaryKey: String(kCFBundleVersionKey)) as! String
+        //读取本地版本号
+        let localVersion = UserDefaults.standard.object(forKey: #function) as? String
+        if let version = localVersion, newVersion == version {
+            return false
+        } else {
+            UserDefaults.standard.setValue(newVersion, forKey: #function)
+            return true
+        }
+    }
 }

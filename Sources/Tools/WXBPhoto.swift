@@ -85,7 +85,7 @@ extension WXBPhoto: UIImagePickerControllerDelegate, UINavigationControllerDeleg
         if picker.sourceType == .camera {
             //保存相册
         }
-        DLog(image)
+        print(image)
         picker.dismiss(animated: true) {
             if let block = self.didFinishBlock {
                 block([image])
