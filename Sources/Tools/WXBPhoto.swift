@@ -9,7 +9,7 @@
 import UIKit
 
 
-public class WXBPhoto: NSObject {
+open class WXBPhoto: NSObject {
     public static let manager = WXBPhoto()
     public typealias MGUploadPhotoDidFinishBlock = (([UIImage]) -> Void)
     private var didFinishBlock: MGUploadPhotoDidFinishBlock?

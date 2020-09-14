@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - Properties
 public extension UIApplication {
     
     var appBundleName: String {
@@ -25,9 +26,12 @@ public extension UIApplication {
     var appBuildVersion: String {
         return Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as! String
     }
-    
-    //是否显示新版本引导页
-    static func canShowNewGuidePages() -> Bool {
+}
+
+// MARK: - Method
+public extension UIApplication {
+    ///是否为新版本
+    func isNewVersion() -> Bool {
         //系统直接读取的版本号
         let newVersion = Bundle.main.object(forInfoDictionaryKey: String(kCFBundleVersionKey)) as! String
         //读取本地版本号

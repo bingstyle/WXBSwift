@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 // MARK: - Properties
-public class WXBLocation: NSObject {
+open class WXBLocation: NSObject {
     
     public static let shared = WXBLocation()
     

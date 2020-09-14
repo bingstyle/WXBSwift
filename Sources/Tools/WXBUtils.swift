@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class WXBUtils: NSObject {
+open class WXBUtils: NSObject {
     
 }
 
@@ -40,17 +40,4 @@ public extension WXBUtils {
         return dict
     }
     
-    ///是否为新版本
-    func isNewVersion() -> Bool {
-        //系统直接读取的版本号
-        let newVersion = Bundle.main.object(forInfoDictionaryKey: String(kCFBundleVersionKey)) as! String
-        //读取本地版本号
-        let localVersion = UserDefaults.standard.object(forKey: #function) as? String
-        if let version = localVersion, newVersion == version {
-            return false
-        } else {
-            UserDefaults.standard.setValue(newVersion, forKey: #function)
-            return true
-        }
-    }
 }

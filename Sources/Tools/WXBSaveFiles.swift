@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct WXBSaveFiles {
+open class WXBSaveFiles: NSObject {
     
     public static func cacheURL() -> URL? {
         let manager = FileManager.default
