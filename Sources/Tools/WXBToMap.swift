@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 
-open class WXBToMap: NSObject {
+public struct WXBToMap {
 
     private struct MapModel {
         var title: String

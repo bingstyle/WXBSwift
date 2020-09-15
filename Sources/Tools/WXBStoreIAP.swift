@@ -21,8 +21,8 @@ open class WXBStoreIAP: NSObject {
     deinit {
         SKPaymentQueue.default().remove(self)
     }
-    static let shared = WXBStoreIAP()
-    weak open var delegate: WXBStoreIAPDelegate?
+    public static let shared = WXBStoreIAP()
+    public weak var delegate: WXBStoreIAPDelegate?
     
     public typealias WXBProductBlock = (SKProduct) -> Void
     public typealias WXBBuySuccessBlock = (SKPaymentTransaction, String) -> Void
