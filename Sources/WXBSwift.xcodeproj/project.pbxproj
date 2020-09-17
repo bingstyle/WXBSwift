@@ -63,6 +63,7 @@
 		2D93CD3A24EA875800C9FA06 /* WXBLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93CD3924EA875800C9FA06 /* WXBLocation.swift */; };
 		2D93CD3C24EA879B00C9FA06 /* WXBUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93CD3B24EA879B00C9FA06 /* WXBUtils.swift */; };
 		2D93CD3E24EA882600C9FA06 /* APPGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93CD3D24EA882600C9FA06 /* APPGlobal.swift */; };
+		2D992CFE25132B190023E134 /* WXBKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D992CFD25132B190023E134 /* WXBKeychain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +125,7 @@
 		2D93CD3924EA875800C9FA06 /* WXBLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXBLocation.swift; sourceTree = "<group>"; };
 		2D93CD3B24EA879B00C9FA06 /* WXBUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXBUtils.swift; sourceTree = "<group>"; };
 		2D93CD3D24EA882600C9FA06 /* APPGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPGlobal.swift; sourceTree = "<group>"; };
+		2D992CFD25132B190023E134 /* WXBKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXBKeychain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 				2D93CD1C24EA7C1000C9FA06 /* StackOrQueue.swift */,
 				2D424B5D25021E9000D04B95 /* WXBBattery.swift */,
 				2D424B5B2500C60E00D04B95 /* WXBDevice.swift */,
+				2D992CFD25132B190023E134 /* WXBKeychain.swift */,
 				2D93CD3924EA875800C9FA06 /* WXBLocation.swift */,
 				2D93CD2F24EA85FE00C9FA06 /* WXBLunarHelper.swift */,
 				2D2FCF0524EFAF3000BD14AC /* WXBNavigationBar.swift */,
@@ -386,6 +389,7 @@
 				2D93CCD124EA6E8200C9FA06 /* CGVector+Extension.swift in Sources */,
 				2D424B5C2500C60E00D04B95 /* WXBDevice.swift in Sources */,
 				2D93CCE624EA732F00C9FA06 /* Bool+Extension.swift in Sources */,
+				2D992CFE25132B190023E134 /* WXBKeychain.swift in Sources */,
 				2D93CCCD24EA6E4A00C9FA06 /* CGRect+Extension.swift in Sources */,
 				2D8D14EF250F57FD00A2F43E /* UIStoryboard+Extension.swift in Sources */,
 				2D93CCD424EA6EBD00C9FA06 /* Date+Extension.swift in Sources */,
