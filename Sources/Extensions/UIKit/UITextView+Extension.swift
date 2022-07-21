@@ -53,6 +53,16 @@ public extension UITextView {
         sizeToFit()
     }
 
+    /// Required height for a textView
+    func requiredHeight(width: CGFloat) -> CGFloat {
+        let v = UITextView(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
+        v.font = font
+        v.text = text
+        v.attributedText = attributedText
+        v.textContainerInset = textContainerInset
+        v.sizeToFit()
+        return v.frame.height
+    }
 }
 
 #endif

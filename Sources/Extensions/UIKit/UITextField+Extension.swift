@@ -13,8 +13,12 @@ import UIKit
 public extension UITextField {
     private struct AssociatedKeys {
         static var maxLength = "yq_maxLength"
+        static var maxDecimalLength = "yq_maxDecimalLength"
     }
+    ///ps: 如果业务逻辑也在监听.editingChanged, 当输入超过最大限制时, 其响应方法获取的 text 并不是输入框显示的, 不准确.
+    ///需要在下一个runtime获取输入框的text, 可以使用DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {}处理, 或者其他方法
     
+    //限制最大长度
     var maxLength: Int? {
         get {
             return objc_getAssociatedObject(self, &AssociatedKeys.maxLength) as? Int
@@ -23,6 +27,18 @@ public extension UITextField {
             if let newValue = newValue {
                 objc_setAssociatedObject(self, &AssociatedKeys.maxLength, newValue as Int, .OBJC_ASSOCIATION_ASSIGN)
                 self.addTarget(self, action: #selector(yq_textFieldTextDidChange), for: .editingChanged)
+            }
+        }
+    }
+    //限制小数位最大长度
+    var maxDecimalLength: Int? {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKeys.maxDecimalLength) as? Int
+        }
+        set {
+            if let newValue = newValue {
+                objc_setAssociatedObject(self, &AssociatedKeys.maxDecimalLength, newValue as Int, .OBJC_ASSOCIATION_ASSIGN)
+                self.addTarget(self, action: #selector(yq_textFieldTextChanged), for: .editingChanged)
             }
         }
     }
@@ -36,6 +52,25 @@ public extension UITextField {
                     str = String(str.prefix(maxLength))
                 }
                 text = str
+                //让光标停留在正确的位置
+                let targetPosion = position(from: endOfDocument, offset: cursorPostion)!
+                selectedTextRange = textRange(from: targetPosion, to: targetPosion)
+            }
+            return
+        }
+    }
+    @objc private func yq_textFieldTextChanged() {
+        guard let _ = markedTextRange else {
+            //记录当前光标的位置，后面需要进行修改
+            let cursorPostion = self.offset(from: endOfDocument, to: selectedTextRange!.end)
+            if let value = text, value.contains("."), let maxLength = maxDecimalLength {
+                let pre = value[...value.firstIndex(of: ".")!]
+                var str = value.replacingOccurrences(of: pre, with: "")
+                //限制最大输入长度
+                if str.count > maxLength {
+                    str = String(str.prefix(maxLength))
+                }
+                text = pre + str
                 //让光标停留在正确的位置
                 let targetPosion = position(from: endOfDocument, offset: cursorPostion)!
                 selectedTextRange = textRange(from: targetPosion, to: targetPosion)

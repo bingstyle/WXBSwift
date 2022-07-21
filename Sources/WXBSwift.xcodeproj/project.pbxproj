@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D015D4B28852C5E00AD79BE /* UIViewController+ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D015D4A28852C5E00AD79BE /* UIViewController+ModalTransition.swift */; };
 		2D2FCF0624EFAF3000BD14AC /* WXBNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2FCF0524EFAF3000BD14AC /* WXBNavigationBar.swift */; };
 		2D424B5C2500C60E00D04B95 /* WXBDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D424B5B2500C60E00D04B95 /* WXBDevice.swift */; };
 		2D424B5E25021E9000D04B95 /* WXBBattery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D424B5D25021E9000D04B95 /* WXBBattery.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D015D4A28852C5E00AD79BE /* UIViewController+ModalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ModalTransition.swift"; sourceTree = "<group>"; };
 		2D2FCF0524EFAF3000BD14AC /* WXBNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXBNavigationBar.swift; sourceTree = "<group>"; };
 		2D424B5B2500C60E00D04B95 /* WXBDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXBDevice.swift; sourceTree = "<group>"; };
 		2D424B5D25021E9000D04B95 /* WXBBattery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXBBattery.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				2D93CD1224EA79AB00C9FA06 /* UITextView+Extension.swift */,
 				2D93CD1424EA79CD00C9FA06 /* UIView+Extension.swift */,
 				2D93CD1624EA7A3000C9FA06 /* UIViewController+Extension.swift */,
+				2D015D4A28852C5E00AD79BE /* UIViewController+ModalTransition.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				2D93CCF224EA760B00C9FA06 /* Decodable+Extension.swift in Sources */,
 				2D93CCF524EA765200C9FA06 /* UIAlertController+Extension.swift in Sources */,
 				2D93CD1324EA79AB00C9FA06 /* UITextView+Extension.swift in Sources */,
+				2D015D4B28852C5E00AD79BE /* UIViewController+ModalTransition.swift in Sources */,
 				2D93CD0D24EA794900C9FA06 /* UITabBarController+Extension.swift in Sources */,
 				2D2FCF0624EFAF3000BD14AC /* WXBNavigationBar.swift in Sources */,
 				2D93CD3224EA861500C9FA06 /* WXBSolarLunar.swift in Sources */,
