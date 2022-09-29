@@ -49,6 +49,28 @@ public extension UIViewController {
         present(vc, animated: true, completion: nil)
     }
 }
+
+public protocol ModalViewUpdateSizeProtocol {
+    func updateModalViewHeight(_ h: CGFloat)
+}
+
+public extension ModalViewUpdateSizeProtocol where Self: UIView {
+    func updateModalViewHeight(_ h: CGFloat) {
+        guard let tView = self.superview else {return}
+        let offsetY = tView.bounds.size.height - h
+        tView.height = h
+        tView.origin.y += offsetY
+//        tView.setNeedsLayout()
+//        NSLayoutConstraint.activate([
+//            tView.heightAnchor.constraint(equalToConstant: h),
+//            self.heightAnchor.constraint(equalToConstant: h)
+//        ])
+        UIView.animate(withDuration: 0.35, animations: {
+            
+//            tView.layoutIfNeeded()
+        }, completion: nil)
+    }
+}
  
 public class XTModalTransitionConfig {
     

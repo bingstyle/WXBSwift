@@ -11,14 +11,24 @@ import Foundation
 
 public extension Double {
     
-    // toFixed() 方法可四舍五入为指定小数位数的数字。
-    func toFixed(_ num: Int) -> Double {
-        if num == 0 {
-            return Double(lround(self))
-        }
-        let divisor = pow(10.0, Double(num))
-        return (self * divisor).rounded() / divisor
+    // 指定小数位数使用 Decimal+Extension.swift
+    
+    /// SwifterSwift: Int.
+    var int: Int {
+        return Int(self)
     }
+
+    /// SwifterSwift: Double.
+    var float: Float {
+        return Float(self)
+    }
+
+    #if canImport(CoreGraphics)
+    /// SwifterSwift: CGFloat.
+    var cgFloat: CGFloat {
+        return CGFloat(self)
+    }
+    #endif
 }
 
 #endif

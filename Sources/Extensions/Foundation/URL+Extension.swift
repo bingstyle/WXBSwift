@@ -91,6 +91,9 @@ public extension URL {
     ///
     /// - Returns: URL with all path components removed.
     func deletingAllPathComponents() -> URL {
+        if pathComponents.isEmpty {
+            return self
+        }
         var url: URL = self
         for _ in 0..<pathComponents.count - 1 {
             url.deleteLastPathComponent()
@@ -104,6 +107,7 @@ public extension URL {
     ///        url.deleteAllPathComponents()
     ///        print(url) // prints "https://domain.com/"
     mutating func deleteAllPathComponents() {
+        if pathComponents.isEmpty {return}
         for _ in 0..<pathComponents.count - 1 {
             deleteLastPathComponent()
         }

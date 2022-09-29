@@ -10,7 +10,11 @@ import UIKit
 
 public extension UIAlertController {
     //通用弹窗
-    static func show(title: String?, message: String?, okTitle: String = "确定", handler: @escaping ()->Void) {
+    static func show(title: String?,
+                     message: String?,
+                     okTitle: String = "确定",
+                     handler: @escaping ()->Void) {
+        
         let alert = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
         let cancelAction = UIAlertAction.init(title: "取消", style: .cancel, handler: nil)
         let okAction = UIAlertAction.init(title: okTitle, style: .default) { (action) in
@@ -23,10 +27,11 @@ public extension UIAlertController {
     
     //弹出输入框
     static func showInput(title: String?,
-                                 message: String?,
-                                 placeholder: String?,
-                                 keyboardType: UIKeyboardType = .default,
-                                 handler: @escaping (String?)->Void) {
+                          message: String?,
+                          placeholder: String?,
+                          keyboardType: UIKeyboardType = .default,
+                          handler: @escaping (String?)->Void) {
+        
         let alert = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction.init(title: "确定", style: .default) { (action) in
             handler(alert.textFields?.first?.text)

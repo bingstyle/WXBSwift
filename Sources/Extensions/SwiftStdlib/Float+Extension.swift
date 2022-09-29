@@ -6,12 +6,13 @@
 //  Copyright © 2020 bing. All rights reserved.
 //
 
-#if canImport(CoreGraphics)
-import CoreGraphics
-#endif
+#if canImport(Foundation)
+import Foundation
 
 // MARK: - Properties
 public extension Float {
+    
+    // 指定小数位数使用 Decimal+Extension.swift
 
     /// SwifterSwift: Int.
     var int: Int {
@@ -31,3 +32,5 @@ public extension Float {
     #endif
 
 }
+
+#endif
