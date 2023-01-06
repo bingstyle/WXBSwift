@@ -98,8 +98,8 @@ final class Decimal_ExtensionTests: XCTestCase {
     }
     
     func test_numberValue() {
-        let str1 = "1.2353sgerg234sdf"
-        let r1 = str1.numberValue
-        XCTAssertEqual(r1, "1.2353")
+        XCTAssertEqual("123.456a".numberValue, "123.456")
+        XCTAssertEqual("123.000px".numberValue, "123")
+        XCTAssertEqual("a123px".numberValue, "0")
     }
 }

@@ -26,6 +26,13 @@ public extension UIApplication {
     var appBuildVersion: String {
         return Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as! String
     }
+    
+    @available(iOS 13.0, *)
+    var firstWindowScene: UIWindowScene? {
+        UIApplication.shared.connectedScenes
+            .first(where: { $0 is UIWindowScene })
+            .flatMap({ $0 as? UIWindowScene })
+    }
 }
 
 // MARK: - Method

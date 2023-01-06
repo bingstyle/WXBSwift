@@ -17,5 +17,12 @@ final class Double_ExtensionTests: XCTestCase {
         XCTAssertEqual(value, -2.124)
     }
     
+    func testBigDouble() {
+        let value = 1e3
+        XCTAssertEqual(value, 1000)
+        
+        let r2 = 32e-1
+        XCTAssertEqual(r2, 3.2)
+    }
     
 }

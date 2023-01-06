@@ -682,6 +682,11 @@ public extension Date {
     ///     Date().string(withFormat: "dd/MM/yyyy") -> "1/12/17"
     ///     Date().string(withFormat: "HH:mm") -> "23:50"
     ///     Date().string(withFormat: "dd/MM/yyyy HH:mm") -> "1/12/17 23:50"
+    ///     Date().string(withFormat: "HH:mm z") -> "23:50 GMT+8" (<=3个z)
+    ///     Date().string(withFormat: "HH:mm zzzz") -> "23:50 China Standard Time" (>=4个z)
+    ///     Date().string(withFormat: "HH:mm Z") -> "23:50 +0800" (<=3个Z)
+    ///     Date().string(withFormat: "HH:mm ZZZZ") -> "23:50 GMT+08:00" (4或大于5个Z)
+    ///     Date().string(withFormat: "HH:mm ZZZZZ") -> "23:50 +08:00" (5个Z)
     ///
     /// - Parameter format: Date format (default is "dd/MM/yyyy").
     /// - Returns: date string.

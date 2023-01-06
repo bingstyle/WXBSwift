@@ -7,12 +7,14 @@
 //
 
 import UIKit
-
+import Photos
 
 open class WXBPhoto: NSObject {
     public static let manager = WXBPhoto()
     public typealias MGUploadPhotoDidFinishBlock = (([UIImage]) -> Void)
     private var didFinishBlock: MGUploadPhotoDidFinishBlock?
+    /// 主窗口
+    private let WXBPhoto_WINDOW = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
 }
 
 // MARK: - Public
@@ -22,13 +24,28 @@ public extension WXBPhoto {
         didFinishBlock = block
         
         let alertController = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
-        alertController.addAction(UIAlertAction.init(title: "从相册选择", style: .default, handler: { (action) in
-            WXBPhoto.manager.photoPicker()
+        alertController.addAction(UIAlertAction.init(title: "Album", style: .default, handler: { (action) in
+            WXBPhoto.photoAlbumPermissions {
+                print("打开相册")
+                DispatchQueue.main.async {
+                    WXBPhoto.manager.photoPicker()
+                }
+            } deniedBlock: {
+                print("No permission to open the album")
+            }
         }))
-        alertController.addAction(UIAlertAction.init(title: "拍照", style: .default, handler: { (action) in
-            WXBPhoto.manager.cameraPicker()
+        alertController.addAction(UIAlertAction.init(title: "Camera", style: .default, handler: { (action) in
+            WXBPhoto.cameraPermissions {
+                print("打开相机")
+                DispatchQueue.main.async {
+                    WXBPhoto.manager.cameraPicker()
+                }
+            } deniedBlock: {
+                print("No permission to use the camera")
+            }
+
         }))
-        alertController.addAction(UIAlertAction.init(title: "取消", style: .cancel, handler: nil))
+        alertController.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
         
         UIApplication.shared.windows[0].rootViewController?.present(alertController, animated: true, completion: nil)
     }
@@ -71,6 +88,40 @@ private extension WXBPhoto {
             }
         } else {
             print("不支持拍照")
+        }
+    }
+    
+    // 相机权限
+    static func cameraPermissions(authorizedBlock: (()->Void)?, deniedBlock: (()->Void)?) {
+        let authStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
+        
+        // .notDetermined .authorized .restricted .denied
+        if authStatus == .notDetermined {
+            // 第一次触发授权 alert
+            AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
+                self.cameraPermissions(authorizedBlock: authorizedBlock, deniedBlock: deniedBlock)
+            })
+        } else if authStatus == .authorized {
+            authorizedBlock?()
+        } else {
+            deniedBlock?()
+        }
+    }
+    
+    // 相册权限
+    class func photoAlbumPermissions(authorizedBlock: (()->Void)?, deniedBlock: (()->Void)?) {
+        let authStatus = PHPhotoLibrary.authorizationStatus()
+        
+        // .notDetermined .authorized .restricted .denied
+        if authStatus == .notDetermined {
+            // 第一次触发授权 alert
+            PHPhotoLibrary.requestAuthorization { (status:PHAuthorizationStatus) -> Void in
+                self.photoAlbumPermissions(authorizedBlock: authorizedBlock, deniedBlock: deniedBlock)
+            }
+        } else if authStatus == .authorized {
+            authorizedBlock?()
+        } else {
+            deniedBlock?()
         }
     }
 }

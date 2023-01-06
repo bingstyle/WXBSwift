@@ -9,12 +9,12 @@
 import UIKit
 
 // MARK:- 自定义打印方法
-//public func DLog<T>(_ message : T, file : String = #file, funcName : String = #function, lineNum : Int = #line) {
-//    #if DEBUG
-//    let fileName = (file as NSString).lastPathComponent
-//    print("\(fileName):(\(lineNum))-\(message)")
-//    #endif
-//}
+public func DLog<T>(_ message : T, file : String = #file, funcName : String = #function, lineNum : Int = #line) {
+    #if DEBUG
+    let fileName = (file as NSString).lastPathComponent
+    print("\(fileName):(\(lineNum))-\(message)")
+    #endif
+}
 //
 //// 等比例适配（以iPhone6的屏宽为标准）
 //@inline(__always) public func ScaleWidth() -> CGFloat {

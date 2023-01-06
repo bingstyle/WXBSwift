@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D015D4B28852C5E00AD79BE /* UIViewController+ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D015D4A28852C5E00AD79BE /* UIViewController+ModalTransition.swift */; };
+		2D16A486291239600099D50B /* WXBPropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D16A485291239600099D50B /* WXBPropertyWrapper.swift */; };
 		2D2FCF0624EFAF3000BD14AC /* WXBNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2FCF0524EFAF3000BD14AC /* WXBNavigationBar.swift */; };
 		2D424B5C2500C60E00D04B95 /* WXBDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D424B5B2500C60E00D04B95 /* WXBDevice.swift */; };
 		2D424B5E25021E9000D04B95 /* WXBBattery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D424B5D25021E9000D04B95 /* WXBBattery.swift */; };
@@ -71,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		2D015D4A28852C5E00AD79BE /* UIViewController+ModalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ModalTransition.swift"; sourceTree = "<group>"; };
+		2D16A485291239600099D50B /* WXBPropertyWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXBPropertyWrapper.swift; sourceTree = "<group>"; };
 		2D2FCF0524EFAF3000BD14AC /* WXBNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXBNavigationBar.swift; sourceTree = "<group>"; };
 		2D424B5B2500C60E00D04B95 /* WXBDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXBDevice.swift; sourceTree = "<group>"; };
 		2D424B5D25021E9000D04B95 /* WXBBattery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXBBattery.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				2D93CD2F24EA85FE00C9FA06 /* WXBLunarHelper.swift */,
 				2D2FCF0524EFAF3000BD14AC /* WXBNavigationBar.swift */,
 				2D93CD3524EA86B300C9FA06 /* WXBPhoto.swift */,
+				2D16A485291239600099D50B /* WXBPropertyWrapper.swift */,
 				2D93CD3324EA867A00C9FA06 /* WXBSaveFiles.swift */,
 				2D93CD3124EA861500C9FA06 /* WXBSolarLunar.swift */,
 				2D8D14EC250F4F7000A2F43E /* WXBStoreIAP.swift */,
@@ -407,6 +410,7 @@
 				2D93CCD424EA6EBD00C9FA06 /* Date+Extension.swift in Sources */,
 				2D93CCE824EA734A00C9FA06 /* Character+Extension.swift in Sources */,
 				2D93CCEE24EA74E500C9FA06 /* Double+Extension.swift in Sources */,
+				2D16A486291239600099D50B /* WXBPropertyWrapper.swift in Sources */,
 				2D93CCF924EA778000C9FA06 /* UIBarButtonItem+Extension.swift in Sources */,
 				2D93CD1724EA7A3000C9FA06 /* UIViewController+Extension.swift in Sources */,
 				2D93CD0324EA788600C9FA06 /* UIFont+Extension.swift in Sources */,

@@ -23,7 +23,8 @@ import CoreGraphics
 #endif
 
 public extension String {
-    // 中文转拼音
+    
+    /// 中文转拼音
     func toPinyin() -> String {
         let stringRef = NSMutableString(string: self) as CFMutableString
         // 转换为带音标的拼音
@@ -35,23 +36,93 @@ public extension String {
         return pinyin.replacingOccurrences(of: " ", with: "")
     }
     
-    func widthForComment(fontSize: CGFloat, height: CGFloat = 15) -> CGFloat {
-        let font = UIFont.systemFont(ofSize: fontSize)
+    /// 计算字符串宽度
+    func widthForComment(font: UIFont, height: CGFloat = 15) -> CGFloat {
+        
         let rect = NSString(string: self).boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: height), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
         return ceil(rect.width)
     }
-    
-    func heightForComment(fontSize: CGFloat, width: CGFloat) -> CGFloat {
-        let font = UIFont.systemFont(ofSize: fontSize)
+    /// 计算字符串高度
+    func heightForComment(font: UIFont, width: CGFloat) -> CGFloat {
+        
         let rect = NSString(string: self).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
         return ceil(rect.height)
     }
     
-    func heightForComment(fontSize: CGFloat, width: CGFloat, maxHeight: CGFloat) -> CGFloat {
-        let font = UIFont.systemFont(ofSize: fontSize)
-        let rect = NSString(string: self).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
-        return ceil(rect.height)>maxHeight ? maxHeight : ceil(rect.height)
+}
+
+// MARK: - 字符串转换数字
+public extension String {
+    
+    /// 转换为整数
+    var intValue: Int {
+        return self.parseInt()
     }
+    func parseInt() -> Int {
+        let value = (self as NSString).integerValue
+        return value
+    }
+    /// 转换为小数
+    // Float
+    var floatValue: Float {
+        return self.parseFloat()
+    }
+    func parseFloat() -> Float {
+        let value = (self as NSString).floatValue
+        return value
+    }
+    // Double
+    var doubleValue: Double {
+        return self.parseDouble()
+    }
+    func parseDouble() -> Double {
+        let value = (self as NSString).doubleValue
+        return value
+    }
+    /// 转换为Bool
+    var boolValue: Bool {
+        return self.parseBool()
+    }
+    func parseBool() -> Bool {
+        let value = (self as NSString).boolValue
+        return value
+    }
+}
+
+// MARK: - 字符串转换为 Date
+public extension String {
+
+    /// SwifterSwift: Date object from "yyyy-MM-dd" formatted string.
+    ///
+    ///        "2007-06-29".date -> Optional(Date)
+    ///        "2007-06-29 14:23:09".date -> Optional(Date)
+    ///
+    var date: Date? {
+        let selfLowercased = trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        if selfLowercased.count == 10 {
+            formatter.dateFormat = "yyyy-MM-dd"
+        } else {
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        }
+        
+        return formatter.date(from: selfLowercased)
+    }
+
+    /// SwifterSwift: Date object from string of date format.
+    ///
+    ///        "2017-01-15".date(withFormat: "yyyy-MM-dd") -> Date set to Jan 15, 2017
+    ///        "not date string".date(withFormat: "yyyy-MM-dd") -> nil
+    ///
+    /// - Parameter format: date format.
+    /// - Returns: Date object from string (if applicable).
+    func date(withFormat format: String) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.date(from: self)
+    }
+        
 }
 
 // MARK: - Properties
@@ -329,62 +400,6 @@ public extension String {
         return folding(options: .diacriticInsensitive, locale: Locale.current)
     }
     #endif
-
-    #if canImport(Foundation)
-    /// SwifterSwift: Bool value from string (if applicable).
-    ///
-    ///        "1".bool -> true
-    ///        "False".bool -> false
-    ///        "Hello".bool = nil
-    ///
-    var bool: Bool? {
-        let selfLowercased = trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-        switch selfLowercased {
-        case "true", "yes", "1":
-            return true
-        case "false", "no", "0":
-            return false
-        default:
-            return nil
-        }
-    }
-    #endif
-
-    #if canImport(Foundation)
-    /// SwifterSwift: Date object from "yyyy-MM-dd" formatted string.
-    ///
-    ///        "2007-06-29".date -> Optional(Date)
-    ///
-    var date: Date? {
-        let selfLowercased = trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-        let formatter = DateFormatter()
-        formatter.timeZone = TimeZone.current
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter.date(from: selfLowercased)
-    }
-    #endif
-
-    #if canImport(Foundation)
-    /// SwifterSwift: Date object from "yyyy-MM-dd HH:mm:ss" formatted string.
-    ///
-    ///        "2007-06-29 14:23:09".dateTime -> Optional(Date)
-    ///
-    var dateTime: Date? {
-        let selfLowercased = trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-        let formatter = DateFormatter()
-        formatter.timeZone = TimeZone.current
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        return formatter.date(from: selfLowercased)
-    }
-    #endif
-
-    /// SwifterSwift: Integer value from string (if applicable).
-    ///
-    ///        "101".int -> 101
-    ///
-    var int: Int? {
-        return Int(self)
-    }
 
     /// SwifterSwift: Lorem ipsum string of given length.
     ///
@@ -897,21 +912,6 @@ public extension String {
         }
         return hasPrefix(prefix)
     }
-
-    #if canImport(Foundation)
-    /// SwifterSwift: Date object from string of date format.
-    ///
-    ///        "2017-01-15".date(withFormat: "yyyy-MM-dd") -> Date set to Jan 15, 2017
-    ///        "not date string".date(withFormat: "yyyy-MM-dd") -> nil
-    ///
-    /// - Parameter format: date format.
-    /// - Returns: Date object from string (if applicable).
-    func date(withFormat format: String) -> Date? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = format
-        return dateFormatter.date(from: self)
-    }
-    #endif
 
     #if canImport(Foundation)
     /// SwifterSwift: Removes spaces and new lines in beginning and end of string.

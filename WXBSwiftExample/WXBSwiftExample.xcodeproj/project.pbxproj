@@ -10,6 +10,7 @@
 		2D015D4E28852DAE00AD79BE /* TableRowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D015D4D28852DAE00AD79BE /* TableRowInfo.swift */; };
 		2D2A7939285C22A100ABB800 /* WXBSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D2FCF2724F0FC3600BD14AC /* WXBSwift.framework */; };
 		2D2A793A285C22A100ABB800 /* WXBSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2D2FCF2724F0FC3600BD14AC /* WXBSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2D3A72AF28F27473009B9972 /* CGFloat+ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3A72AE28F27473009B9972 /* CGFloat+ExtensionTests.swift */; };
 		2D4D787428BDFB7E009A9CE7 /* AutoSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D787328BDFB7E009A9CE7 /* AutoSizeView.swift */; };
 		2D93CC6524EA59E300C9FA06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93CC6424EA59E300C9FA06 /* AppDelegate.swift */; };
 		2D93CC6724EA59E300C9FA06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93CC6624EA59E300C9FA06 /* SceneDelegate.swift */; };
@@ -26,6 +27,7 @@
 		2DBBC69528E5882E00CF69C8 /* UIView+ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBBC69428E5882E00CF69C8 /* UIView+ExtensionTests.swift */; };
 		2DBBC69728E58CE800CF69C8 /* UIApplication+ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBBC69628E58CE800CF69C8 /* UIApplication+ExtensionTests.swift */; };
 		2DBBC69928E58FF100CF69C8 /* UIBarButtonItem+ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBBC69828E58FF100CF69C8 /* UIBarButtonItem+ExtensionTests.swift */; };
+		2DBBC69D28E6C09C00CF69C8 /* Date+ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBBC69C28E6C09C00CF69C8 /* Date+ExtensionTests.swift */; };
 		2DE7D0262889495400FA7409 /* WXBSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE7D0252889494200FA7409 /* WXBSwift.framework */; };
 		2DE7D0272889495400FA7409 /* WXBSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE7D0252889494200FA7409 /* WXBSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -65,6 +67,7 @@
 /* Begin PBXFileReference section */
 		2D015D4D28852DAE00AD79BE /* TableRowInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRowInfo.swift; sourceTree = "<group>"; };
 		2D2FCF2724F0FC3600BD14AC /* WXBSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WXBSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D3A72AE28F27473009B9972 /* CGFloat+ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+ExtensionTests.swift"; sourceTree = "<group>"; };
 		2D4D787328BDFB7E009A9CE7 /* AutoSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoSizeView.swift; sourceTree = "<group>"; };
 		2D93CC6124EA59E300C9FA06 /* WXBSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WXBSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D93CC6424EA59E300C9FA06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +87,7 @@
 		2DBBC69428E5882E00CF69C8 /* UIView+ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ExtensionTests.swift"; sourceTree = "<group>"; };
 		2DBBC69628E58CE800CF69C8 /* UIApplication+ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+ExtensionTests.swift"; sourceTree = "<group>"; };
 		2DBBC69828E58FF100CF69C8 /* UIBarButtonItem+ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+ExtensionTests.swift"; sourceTree = "<group>"; };
+		2DBBC69C28E6C09C00CF69C8 /* Date+ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ExtensionTests.swift"; sourceTree = "<group>"; };
 		2DE7D0202889494200FA7409 /* WXBSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WXBSwift.xcodeproj; path = ../Sources/WXBSwift.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +117,13 @@
 				2D015D4D28852DAE00AD79BE /* TableRowInfo.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		2D3A72AC28F27454009B9972 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreGraphics;
 			sourceTree = "<group>";
 		};
 		2D93CC5824EA59E300C9FA06 = {
@@ -163,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				2DBBC67D28E5451000CF69C8 /* WXBSwiftExampleTests.swift */,
+				2D3A72AC28F27454009B9972 /* CoreGraphics */,
 				2DBBC69328E5881700CF69C8 /* UIKit */,
 				2DBBC68828E5489000CF69C8 /* Foundation */,
 				2DBBC68528E5451F00CF69C8 /* SwiftStdlib */,
@@ -175,6 +187,8 @@
 			children = (
 				2DBBC68628E5452E00CF69C8 /* Double+ExtensionTests.swift */,
 				2DBBC68F28E57FFF00CF69C8 /* String+ExtensionTests.swift */,
+				2DBBC69C28E6C09C00CF69C8 /* Date+ExtensionTests.swift */,
+				2D3A72AE28F27473009B9972 /* CGFloat+ExtensionTests.swift */,
 			);
 			path = SwiftStdlib;
 			sourceTree = "<group>";
@@ -346,6 +360,8 @@
 				2DBBC67E28E5451000CF69C8 /* WXBSwiftExampleTests.swift in Sources */,
 				2DBBC69928E58FF100CF69C8 /* UIBarButtonItem+ExtensionTests.swift in Sources */,
 				2DBBC69528E5882E00CF69C8 /* UIView+ExtensionTests.swift in Sources */,
+				2D3A72AF28F27473009B9972 /* CGFloat+ExtensionTests.swift in Sources */,
+				2DBBC69D28E6C09C00CF69C8 /* Date+ExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
